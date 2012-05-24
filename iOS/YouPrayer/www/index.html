@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    	<title>YouPrayer</title>
+		<link rel="stylesheet" href="style/master.min.css" type="text/css" media="screen" title="no title">
+		<link rel="stylesheet" href="style/apprise.min.css" type="text/css" media="screen" title="no title">
+	</head>
+  	<body>  
+  		<div id="stage">
+ 			<img src="images/left.png" class="nav-left" id="backButton">
+ 			<img src="images/right.png" class="nav-right" id="nextButton">
+ 			<img src="images/logo1.png" class="logo" alt="logo">
+ 			<div id="help"></div>
+  			<div id="loginscreen" style="top: 40%;" class="request-menu">
+  			<img src="images/fb.png" class="login_button" alt="facebook connect" id="fbLoginButton" onclick="fbLogin()">
+  			<p style="text-align: center; font-size: 24px;">Or</p>
+  			<a onclick="noLogin()" class="button login_button" 
+  				style="width: 260px; height: 40px; line-height: 40px;" id="noLoginButton">Proceed Without Login...</a>
+			</div>
+  			<div id="listview" class="request-menu" style="height: 60%; top: 22%;">
+				<div class="list_nav">
+					<a class="button" id="prevNavButton">Previous</a>
+			  		<a class="button" id="nextNavButton">Next</a>
+			  	</div>
+				<div class="prayer_list" id="prayerList"></div>		
+			</div>
+			<div id="prayerItemInfo" class="request-menu">
+				<a class="button" id="changePrayerButton"></a>
+				<div id="iPrayerText"><textarea id="prayerItemText" class="prayer" readonly></textarea></div>
+				<div id="prayerItemCount"></div>
+			</div>
+  			<div id="content1" class="request-menu offleft">
+				<div id="alerter" class="alert alert-success">
+					<a class="close" data-dismiss="alert">×</a>
+				  	<span id="alerter_text"></span>
+				</div>
+				<div id="welcome"></div>
+				<div class="request-text-area">
+					<textarea id="prayer_text" class="request-text">Enter your prayer request here...</textarea>
+				</div>
+				<a onclick="sendPrayer()" class="button right offright" id="sendButton">Send</a>
+			</div>
+			<div id="prayerResult"><span id="prayerResultText"></span><p><a onclick="anotherPrayer()" class="button" id="sendNext">Send another prayer.</a></p></div>
+			<a id="prayerButton" onclick="findPrayer()" class="button footer-button">I want to pray for someone...</a>
+			<div id="loader"></div>
+			<div id="content2" class="request-menu">
+				<div id="info2"></div>
+				<div id="iwrapper"><textarea id="randomPrayer" class="prayer" readonly></textarea></div>
+				<div id="pinfo"></div>
+				<a onclick="pray()" class="button right">Pray for this situation.</a>
+				<div id="prayThanks">Thank you for your prayers.</div>
+			</div>
+			<div id="content3" class="request-menu">
+				<p>Thank you for using YouPrayer! The goal of this app is 
+				to connect everyone through the power of prayer and technology. 
+				With this app, you can send prayer requests anonymously, and 
+				within seconds, someone half way across the world or someone who 
+				lives right next door to you could be praying for you. In a world 
+				where we as a Church are so divided, I hope that this app can 
+				unite us all.</p>				
+				<p>Thank you for your support,</p>
+				<p>If you have any question or comments, please visit <a href="http://www.youprayer.com">YouPrayer.com</a></p>				
+			</div>
+		</div>
+		<input type="hidden" id="curr_prayer_id" value="-1">
+        <script type="text/javascript" charset="utf-8" src="scripts/build.js"></script>
+  </body>
+</html>
